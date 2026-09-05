@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedrobridge UI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style.css">
+    <script src="prompt.js" defer></script>
+    <script src="request.js" defer></script>
+    <script src="instructionBar.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+  <div id="overlay" class="overlay hidden prompt-mode">
+    <div class="modal is-prompt">
+      <div class="modal-header">
+        <div class="modal-title">
+          <i id="modal-icon" class="modal-icon fa-regular fa-bell hidden" aria-hidden="true"></i>
+          <span id="modal-title-text">Prompt</span>
+        </div>
+        <div id="modal-timer" class="modal-timer hidden">
+          <i class="fa-regular fa-clock" aria-hidden="true"></i>
+          <span id="modal-timer-value" class="timer-value">--</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div id="prompt-wrapper" class="prompt-wrapper">
+          <label id="prompt-input-label" for="prompt-input" class="input-label">Preencha o campo abaixo</label>
+          <textarea id="prompt-input" placeholder="Digite aqui" autocomplete="off" spellcheck="false"></textarea>
+          <div class="prompt-actions">
+            <button id="prompt-confirm" class="request-card action accept" type="button">
+              <div class="card-icon success">
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </div>
+              <div class="card-text">
+                <div class="card-title">Confirmar</div>
+              </div>
+            </button>
+            <button id="prompt-cancel" class="request-card action decline" type="button">
+              <div class="card-icon danger">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+              </div>
+              <div class="card-text">
+                <div class="card-title">Cancelar</div>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div id="request-wrapper" class="request-wrapper hidden">
+          <div class="request-indicators">
+            <div class="request-card accept">
+              <div id="request-accept-key" class="card-key">Y</div>
+              <div class="card-text">
+                <div id="request-accept-title" class="card-title">Aceitar</div>
+              </div>
+            </div>
+            <div class="request-card decline">
+              <div id="request-decline-key" class="card-key">N</div>
+              <div class="card-text">
+                <div id="request-decline-title" class="card-title">Negar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="instruction-bar" class="instruction-bar" aria-hidden="true"></div>
+</body>
+</html>
